@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita Terkini</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .news-card {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
             <a class="navbar-brand" href="#">News App</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -27,27 +35,21 @@
         </div>
     </nav>
 
-    <!-- Kategori -->
-    <div class="container mt-3">
-        <div class="d-flex justify-content-center">
+    <div class="container content">
+        <div class="d-flex justify-content-center mb-3">
             <button class="btn btn-secondary m-1" onclick="fetchNews('technology')">Teknologi</button>
             <button class="btn btn-secondary m-1" onclick="fetchNews('sports')">Olahraga</button>
             <button class="btn btn-secondary m-1" onclick="fetchNews('business')">Bisnis</button>
             <button class="btn btn-secondary m-1" onclick="fetchNews('entertainment')">Hiburan</button>
             <button class="btn btn-secondary m-1" onclick="fetchNews('politics')">Politik</button>
         </div>
-    </div>
 
-    <!-- Pencarian -->
-    <div class="container mt-3">
-        <input type="text" id="search-input" class="form-control" placeholder="Cari berita..." onkeyup="searchNews()">
-    </div>
+        <div class="mb-3">
+            <input type="text" id="search-input" class="form-control" placeholder="Cari berita..." onkeyup="searchNews()">
+        </div>
 
-    <!-- Daftar Berita -->
-    <div class="container mt-4">
         <div id="news-container" class="row"></div>
 
-        <!-- Pagination -->
         <nav>
             <ul class="pagination justify-content-center">
                 <li class="page-item disabled" id="prev-page">
